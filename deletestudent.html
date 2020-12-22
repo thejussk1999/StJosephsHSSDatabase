@@ -1,0 +1,43 @@
+<HTML>
+<HEAD>
+<TITLE>Student Deletion</TITLE>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <STYLE>
+  body{
+  margin-top:125px;
+  }
+  
+  form{
+  width:350px;
+  height:350px;
+  padding-top: 50px;
+  background: rgba(0, 0, 0, 0.4);
+  }
+  </STYLE>
+</HEAD>
+<BODY>
+<CENTER>
+{% block content %}
+
+<FORM action="" method="post" class="my-auto form-group">
+<H2 style="color:white"> Deletion </H2>
+	<P style="color:white"> 
+		{{form.stid.label}}
+	</P>
+	<P>
+		<BR>
+		{{form.stid(size=30)}}
+	</P>
+	<BR>
+	<BR>
+	<P>{{form.submit()}}</P>
+</FORM>
+
+{% endblock %}
+</BODY>
+</CENTER>
+</HTML>

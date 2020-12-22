@@ -1,0 +1,46 @@
+{% block content %}
+<HTML>
+<HEAD>
+<TITLE>Principal Sign In</TITLE>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <STYLE>
+  body{
+  margin-top:75px;
+  margin-bottom:15px;
+  }
+  
+  form{
+  width:350px;
+  padding-top: 50px;
+  background: black;
+  height:300px;
+  }
+  </STYLE>
+</HEAD>
+<BODY>
+<CENTER>
+
+<FORM action="" method="post">
+<H2 style="color:white"> Login </H2>
+	<P style="color:white">
+		{{form.userid.label}}
+	</P>
+	<P>
+		{{form.userid(size=30)}}
+	</P>
+	<P style="color:white">
+		{{form.passw.label}}
+	</P>
+	<P>
+		{{form.passw(size=30)}}
+	</P>
+	<P>{{form.submit()}}</P>
+</FORM>
+</CENTER>
+</BODY>
+</HTML>
+{% endblock %}

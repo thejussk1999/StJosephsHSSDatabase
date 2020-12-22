@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE> Welcome Student</TITLE>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</HEAD>
+<BODY>
+<CENTER><H1> WELCOME {{value}}</H1></CENTER>
+	<DIV class="container">
+		<DIV class="row">	
+			<DIV class="col-sm-7">
+				<H3> Personal Information</H3>
+				{% set columns=['Register ID','Name','Class','Phone Number','Address',"Father's Name","Mother's Name"] %}
+				<TABLE class="table table-striped">
+				{% for i in data[0] %}
+					{% for j in range(0,7) %}
+					<TR>
+						<TD>{{columns[j]}}</TD>
+						<TD>{{i[j]}}</TD>
+					</TR>
+					{% endfor %}
+				{% endfor %}
+				</TABLE>
+				
+				<H3> Attendance Information</H3>
+				<TABLE class="table table-striped">
+				<TH>Hours Present</TH>
+				<TH>Attendance %</TH>
+				<TR>
+				{% for i in data[2] %}
+						<TD>{{i[1]}}</TD>
+						<TD>{{i[2]}}</TD>
+				{% endfor %}
+				</TR>
+				</TABLE>
+				<H3> Extra Curricular </H3>
+				{% for i in data[3] %}
+					{{i[0]}}
+				{% endfor %}
+			</DIV>
+			<DIV class="col-sm-5">
+				<H3> Examination </H3>
+				<TABLE class="table table-striped">
+				<TH>Subject Code</TH>
+				<TH>Marks</TH>
+				{% for i in data[1] %}
+				<TR>
+						<TD>{{i[0]}}</TD>
+						<TD>{{i[1]}}</TD>
+				</TR>
+				{% endfor %}
+			</DIV>
+			</TABLE>
+			
+</BODY>

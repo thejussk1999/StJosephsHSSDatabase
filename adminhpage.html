@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+<TITLE> Principal Login</TITLE>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</HEAD>
+<BODY>
+<DIV class="container">
+	<DIV class="row">
+		<CENTER>
+		<H1>Welcome {{name}}</H1>
+
+		<DIV class="col-sm-6">
+			<TABLE class="table table-striped">
+			<H3> Subject Wise Ranking </H3>
+				<THEAD>
+				<TR> 
+					<TH> Subject ID </TH>
+					<TH> Average %</TH>
+				</TR>
+				</THEAD>
+				<TBODY>
+				{% for row in data[2] %}
+						<TR>
+							<TD> {{row[0]}} </TD>
+							<TD> {{row[1]}}%</TD>
+						</TR>
+				{% endfor %}
+				</TBODY>
+			</TABLE>
+			
+			
+		</DIV>
+
+		<DIV  class="col-sm-6">
+			<TABLE class="table table-striped" style="height:15%">
+			<H3> Examination Toppers </H3>
+				<THEAD>
+				<TR> 
+					<TH> Student ID </TH>
+					<TH> Average %</TH>
+				</TR>
+				</THEAD>
+				<TBODY>
+				{% for row in data[1] %}
+						<TR>
+							<TD> {{row[0]}} </TD>
+							<TD> {{row[1]}}%</TD>
+						</TR>
+				{% endfor %}
+				</TBODY>
+			</TABLE>
+
+			
+
+			<TABLE class="table table-striped" style="height:15%;">
+			<H3> Degree Wise Faculties </H3>
+				<THEAD>
+				<TR> 
+					<TH> Highest Degree </TH>
+					<TH> Number  of Faculties </TH>
+				</TR>
+				</THEAD>
+				<TBODY>
+				{% for row in data[3] %}
+						<TR>
+							<TD> {{row[0]}} </TD>
+							<TD> {{row[1]}}</TD>
+						</TR>
+				{% endfor %}
+				</TBODY>
+			</TABLE>
+			
+			<TABLE class="table table-striped" style="height:15%;">
+			<H3>Links</H3>
+			<TR><TD><A href="/studentadmission">New Admission</A></TD></TR>
+			<BR>
+			<TR><TD><A href="/deletestudent">Student Deletion</A></TD></TR>
+			<BR>
+			<TR><TD><A href="/updatemarks">Mark Updation</A></TD></TR>
+			</TABLE>
+		</DIV>
+		
+		</CENTER>
+	</DIV>
+</DIV>
+</BODY>
+</HTML>
